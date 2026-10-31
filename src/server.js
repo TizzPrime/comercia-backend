@@ -10,7 +10,7 @@ import productRoutes from './routes/products.js';
 import customerRoutes from './routes/customers.js';
 import orderRoutes from './routes/orders.js';
 import expenseRoutes from './routes/expenses.js';
-import dashboardRoutes from './routes/dashboard.js';
+import dashboardRoutes from './routes/dashboard.js';  
 import whatsappRoutes from './routes/whatsapp.js';
 
 
@@ -30,6 +30,9 @@ app.get('/api/health', async (_req, res, next) => {
     await pool.query('SELECT 1');
     res.json({ status: 'ok', database: 'connected' });
   } catch (e) { next(e); }
+});
+app.get('/', (_req, res) => {
+  res.json({ message: 'Bienvenido a la API de Comercia', status: 'online' });
 });
 app.use('/api/whatsapp', whatsappRoutes);
 
