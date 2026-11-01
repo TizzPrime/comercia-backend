@@ -48,4 +48,4 @@ app.use((err, _req, res, _next) => {
 });
 
 const port = Number(process.env.PORT || 4000);
-app.listen(port, () => console.log(`Comercia API escuchando en http://localhost:${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Comercia API escuchando en http://localhost:${port}`));
